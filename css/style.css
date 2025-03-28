@@ -80,7 +80,7 @@ h3 {
     background: url('../assets/hero-bg.png') no-repeat;
     background-size: 100%;
     width: 100%;
-    height: 627px;
+    height: 650px;
     flex-shrink: 0;
     position: relative;
     object-fit: cover;
@@ -171,7 +171,6 @@ h3 {
     font-weight: 700 !important;
     line-height: 41px;
 }
-
 
 .menu li a.active::after {
     content: '';
@@ -268,7 +267,7 @@ padding-right: 25px;}
 
 .form-group {
     position: relative;
-    width: 100%;
+    margin-bottom: 25px;
     border-radius: 4px;
     padding: 10px;
     border-radius: 2px;
@@ -276,60 +275,57 @@ padding-right: 25px;}
     background: rgba(255, 255, 255, 0.04);
 }
 
-.form-control {
-    width: 100%;
-    padding: 12px 10px;
-    border: none;
+.form-group {
+    color: rgba(255, 255, 255, 0.70);
+    font-family: Montserrat;
     font-size: 16px;
-    background: transparent;
-    color: white;
-    outline: none;
-    position: relative;
-    z-index: 2;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-/* Updated floating label */
+.form-control {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    font-size: 16px;
+}
+
 .label {
     position: absolute;
     left: 15px;
-    top: 50%;
+    top: 23px;
+    /* Adjusted to give space above the input field */
     transform: translateY(-50%);
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
-    transition: all 0.3s ease-in-out;
+    color: rgba(255, 255, 255, 0.70);
+    transition: all 0.3s ease;
     pointer-events: none;
+    background-color: inherit;
     z-index: 1;
-    background: transparent;
+    /* Ensure the label is above the input field border */
+}
+
+.form-group:focus,
+.form-group:active,
+.form-group:focus-within {
+    border-color: #FFF;
+    ;
+}
+
+
+.form-control:focus+.label,
+.form-control:valid+.label {
+    left: 10px;
+    top: -13px;
     padding: 0 5px;
-}
-
-/* Move label up when input is focused or has value */
-.form-control:focus + .label,
-.form-control:not(:placeholder-shown) + .label {
-    top: 5px;
-    left: 10px;
-    font-size: 12px;
     color: var(--white-shade);
-    background: inherit;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    background: local;
+    /* 13px */
 }
-
-/* Fix for dropdown */
-#country {
-    background: #387063;
-    color: white;
-    width: 100%;
-}
-
-/* Adjustments for select dropdown label */
-.form-group select:focus + .label,
-.form-group select:valid + .label {
-    top: 5px;
-    left: 10px;
-    font-size: 12px;
-    color: var(--white-shade);
-    background: inherit;
-}
-
 
 .submit-btn {
     border-radius: 4px;
@@ -1027,22 +1023,6 @@ footer p {
     color: #333;
     font-size: 24px;
     transition: color 0.3s ease;
-}
-.ty-social-links {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.ty-social-link img {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s ease;
-}
-
-.ty-social-link img:hover {
-  transform: scale(1.1);
 }
 
 

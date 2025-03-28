@@ -1,15 +1,19 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const inputs = document.querySelectorAll(".form-control");
 
-    inputs.forEach(input => {
-        input.addEventListener("focus", () => {
-            input.parentElement.querySelector(".label").classList.add("active");
-        });
+document.addEventListener('DOMContentLoaded', function () {
 
-        input.addEventListener("blur", () => {
-            if (input.value === "") {
-                input.parentElement.querySelector(".label").classList.remove("active");
-            }
-        });
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('show');
     });
 });
+
+setTimeout(function () {
+    var preloader = document.getElementById("preloader");
+    var content = document.getElementById("content");
+
+    preloader.style.display = "none";
+
+    content.style.display = "block";
+}, 2000);
